@@ -84,6 +84,8 @@ We release a total of 3,000 questions from SecBench (under the [data](./data/) f
  - [SAQs_270.jsonl](./data/SAQs_270.jsonl) : A total of 270 SAQs.
 
 
+**Note :** The released SecBench dataset is also accessible via the *[huggingface link](https://huggingface.co/datasets/secbench-hf/SecBench)* and *[zenodo link](https://zenodo.org/records/14575303)*.
+
 
 ## Citation
 
