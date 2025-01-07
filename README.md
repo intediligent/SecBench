@@ -3,9 +3,10 @@
 Evaluating Large Language Models (LLMs) is crucial for understanding their capabilities and limitations across various applications, including natural language processing and code generation. Existing benchmarks like MMLU, C-Eval, and HumanEval assess general LLM performance but lack focus on specific expert domains such as cybersecurity. Previous attempts to create cybersecurity datasets have faced limitations, including insufficient data volume and a reliance on multiple-choice questions (MCQs). To address these gaps, we propose SecBench, a multi-dimensional benchmarking dataset designed to evaluate LLMs in the cybersecurity domain. SecBench includes questions in various formats (MCQs and short-answer questions (SAQs)), at different capability levels (Knowledge Retention and Logical Reasoning), in multiple languages (Chinese and English), and across various sub-domains. The dataset was constructed by collecting high-quality data from open sources and organizing a Cybersecurity Question Design Contest, resulting in 44,823 MCQs and 3,087 SAQs. Particularly, we used the powerful while cost-effective LLMs to (1). label the data and (2). constructing a grading agent for automatic evaluation of SAQs. Benchmarking results on 16 SOTA LLMs demonstrate the usability of SecBench, which is arguably the largest and most comprehensive benchmark dataset for LLMs in cybersecurity.
 
 
-SecBench official website: *[link](https://secbench.org/)*.
+SecBench official website: <a href="https://secbench.org/" target="_blank">link</a>.
 
-SecBench Technical Paper: *[link](https://arxiv.org/abs/2412.20787)*.
+
+SecBench Technical Paper: <a href="https://arxiv.org/abs/2412.20787" target="_blank">link</a>.
 
 
 
@@ -84,7 +85,7 @@ We release a total of 3,000 questions from SecBench (under the [data](./data/) f
  - [SAQs_270.jsonl](./data/SAQs_270.jsonl) : A total of 270 SAQs.
 
 
-**Note :** The released SecBench dataset is also accessible via the *[huggingface link](https://huggingface.co/datasets/secbench-hf/SecBench)* and *[zenodo link](https://zenodo.org/records/14575303)*.
+**Note :** The released SecBench dataset is also accessible via the <a href="https://huggingface.co/datasets/secbench-hf/SecBench" target="_blank">huggingface link</a> and <a href="https://zenodo.org/records/14575303" target="_blank">zenodo link</a>.
 
 
 ## Citation
