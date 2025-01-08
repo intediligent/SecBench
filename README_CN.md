@@ -108,3 +108,4 @@ SecBench技术文章: <a href="https://arxiv.org/abs/2412.20787" target="_blank"
 
 ## 致谢
 
+该工作在腾讯朱雀实验室、腾讯安全科恩实验室、清华大学、香港理工大学、上海人工智能实验室OpenCompass团队的帮助和支持下共同完成。

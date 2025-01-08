@@ -105,3 +105,4 @@ We release a total of 3,000 questions from SecBench (under the [data](./data/) f
 
 ## Credit
 
+This work was completed with the help and support of Tencent Zhuque Lab, Tencent Security Keen Lab, Tsinghua University, The Hong Kong Polytechnic University, and the OpenCompass team from Shanghai Artificial Intelligence Laboratory.
