@@ -415,14 +415,21 @@ class LLMEvaluator:
         # 转换为大写以统一处理
         response_text = response_text.upper()
         
+        import re
+
         # 处理多选情况
-        multi_options = ['ABC', 'ABD', 'ACD', 'BCD', 'AB', 'AC', 'AD', 'BC', 'BD', 'CD']
+        multi_options = ['ABCD', 'ABC', 'ABD', 'ACD', 'BCD', 'AB', 'AC', 'AD', 'BC', 'BD', 'CD']
         for combo in multi_options:
-            if combo in response_text:
+            if re.search(r'\b' + combo + r'\b', response_text) or \
+               ("答案是" + combo) in response_text or \
+               ("答案：" + combo) in response_text or \
+               ("ANSWER IS " + combo) in response_text or \
+               ("ANSWER: " + combo) in response_text or \
+               ("选择" + combo) in response_text or \
+               ("CHOOSE " + combo) in response_text:
                 return combo
         
         # 使用正则表达式匹配独立的选项字母
-        import re
         match = re.search(r'\b([A-D])\b', response_text)
         if match:
             return match.group(1)
@@ -682,14 +689,14 @@ class LLMEvaluator:
         
         # 保存详细结果到CSV
         results_df = pd.DataFrame(self.results)
-        results_df.to_csv(f"../results/{self.model_name}_evaluation_results.csv", index=False, encoding="utf-8-sig")
-        print(f"\n详细评测结果已保存到: ../results/{self.model_name}_evaluation_results.csv")
+        results_df.to_csv(f"../results/{self.model_name.replace('/', '_')}_evaluation_results.csv", index=False, encoding="utf-8-sig")
+        print(f"\n详细评测结果已保存到: ../results/{self.model_name.replace('/', '_')}_evaluation_results.csv")
 
 def main():
     parser = argparse.ArgumentParser(description="大模型评测工具")
     parser.add_argument("--api_key", default="sk-proj-1234567890", help="API密钥")
     parser.add_argument("--api_url", default="http://localhost:11434/v1/chat/completions", help="API URL")
-    parser.add_argument("--model", default="deepseek-r1:1.5b", help="模型名称")
+    parser.add_argument("--model", default="lingjing/secgpt_chat:latest", help="模型名称")
     parser.add_argument("--data", default="../data/selected_mcqs.jsonl", help="测评数据集路径")
     parser.add_argument("--limit", type=int, help="评测问题数量限制")
     parser.add_argument("--sample", type=int, help="随机抽样评测的问题数量")
