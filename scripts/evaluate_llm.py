@@ -1123,7 +1123,7 @@ class LLMEvaluator:
 def main():
     parser = argparse.ArgumentParser(description="大模型评测工具")
     parser.add_argument("--api_key", default="sk-1234567890", help="API密钥")
-    parser.add_argument("--api_url", default="https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions", help="API URL")
+    parser.add_argument("--api_url", default="https://qianfan.baidubce.com/v2/chat/completions", help="API URL")
     parser.add_argument("--model", default="lingjing/secgpt_chat:latest", help="模型名称")
     parser.add_argument("--data", default="../data/selected_mcqs.jsonl", help="测评数据集路径")
     parser.add_argument("--limit", type=int, help="评测问题数量限制")
