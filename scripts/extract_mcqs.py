@@ -70,9 +70,9 @@ def save_to_jsonl(data, output_file):
     print(f"已将选择的题目保存到 {output_file}")
 
 if __name__ == "__main__":
-    input_file = "../data/MCQs_2730.jsonl"
-    output_excel = "../data/selected_mcqs.xlsx"
-    output_jsonl = "../data/selected_mcqs.jsonl"
+    input_file = "../data/SAQs_270.jsonl"
+    output_excel = "../data/selected_saqs1.xlsx"
+    output_jsonl = "../data/selected_saqs1.jsonl"
     
     # 确保输出目录存在
     os.makedirs(os.path.dirname(output_excel), exist_ok=True)
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     print(f"共读取 {len(data)} 个题目")
     
     # 随机选择
-    selected = select_random_by_domain(data, n=12)
+    selected = select_random_by_domain(data, n=1)
     print(f"共选择 {len(selected)} 个题目")
     
     # 同时保存为Excel和JSONL格式
